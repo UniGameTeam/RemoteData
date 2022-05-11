@@ -14,24 +14,22 @@
         [JsonIgnore]
         public Action<RemoteDataChange> ApplyCallback;
 
-        protected RemoteDataChange() { }
-
-        public static RemoteDataChange Create(string FullPath,
-                                                    string FieldName,
-                                                    object FieldValue,
-                                                    Action<RemoteDataChange> ApplyCallback)
+        public static RemoteDataChange Create(string fullPath,
+                                                    string fieldName,
+                                                    object fieldValue,
+                                                    Action<RemoteDataChange> applyCallback)
         {
-            var change = ClassPool.SpawnOrCreate(() => new RemoteDataChange());
-            change.FullPath = FullPath.Trim(RemoteObjectsProvider.PathDelimeter);
-            change.FieldName = FieldName;
-            change.FieldValue = FieldValue;
-            change.ApplyCallback = ApplyCallback;
+            var change = ClassPool.Spawn<RemoteDataChange>();
+            change.FullPath = fullPath.Trim(RemoteObjectsProvider.PathDelimeter);
+            change.FieldName = fieldName;
+            change.FieldValue = fieldValue;
+            change.ApplyCallback = applyCallback;
             return change;
         }
 
         public void Dispose()
         {
-            ClassPool.Despawn(this, null);
+            ClassPool.Despawn(this);
         }
 
     }
