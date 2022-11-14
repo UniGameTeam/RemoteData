@@ -1,5 +1,6 @@
 {
     "name": "RemoteDataModule",
+    "rootNamespace": "",
     "references": [
         "UniRx",
         "unigame.unicore.runtime",
@@ -11,7 +12,9 @@
     "overrideReferences": false,
     "precompiledReferences": [],
     "autoReferenced": true,
-    "defineConstraints": [],
+    "defineConstraints": [
+        "UNIGAME_REMOTEDATA"
+    ],
     "versionDefines": [],
     "noEngineReferences": false
 }
