@@ -13,7 +13,7 @@
     "precompiledReferences": [],
     "autoReferenced": true,
     "defineConstraints": [
-        "UNIGAME_REMOTEDATA"
+        "FIREBASE_ENABLED"
     ],
     "versionDefines": [],
     "noEngineReferences": false
